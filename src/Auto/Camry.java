@@ -20,7 +20,7 @@ public class Camry extends Car {
                  Lights lights, boolean isCruiseControlOn) {
         super(price, color, maxSpeed, transmissionType, isMoving, wheels, gasTank, engine, electrician, lights);
         this.isCruiseControlOn = isCruiseControlOn;
-        this.usb = new Usb();
+        usb = new Usb();
     }
 
     public Model getModel() {

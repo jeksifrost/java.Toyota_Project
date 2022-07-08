@@ -113,7 +113,7 @@ public abstract class Car {
 
     public void startMoving() throws StartCarException {
         for (Wheel wheel : this.wheels) {
-            if (wheel.isPunctured()) {
+            if (wheel.isIntact()) {
                 throw new StartCarException("Есть проколотое колесо");
             }
         }
@@ -125,6 +125,8 @@ public abstract class Car {
             throw new StartCarException("Двигатель не работает");
         } else if (!this.electrician.isWorkable()) {
             throw new StartCarException("Электрика не работает");
+        } else if (!this.lights.isWorkable()) {
+            throw new StartCarException("Фары не работают");
         } else {
             this.isMoving = true;
             System.out.println("Машина движется. Параметр isMoving = " + this.isMoving);

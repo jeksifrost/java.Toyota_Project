@@ -4,12 +4,12 @@ public class Wheel {
 
     private double price;
     private int diameter;
-    private boolean isPunctured;
+    private boolean isIntact;
 
-    public Wheel(double price, int diameter, boolean isPunctured) {
+    public Wheel(double price, int diameter, boolean isIntact) {
         this.price = price;
         this.diameter = diameter;
-        this.isPunctured = isPunctured;
+        this.isIntact = isIntact;
     }
 
     public double getPrice() {
@@ -28,11 +28,11 @@ public class Wheel {
         this.diameter = diameter;
     }
 
-    public boolean isPunctured() {
-        return isPunctured;
+    public boolean isIntact() {
+        return isIntact;
     }
 
-    public void setPunctured(boolean punctured) {
-        isPunctured = punctured;
+    public void setIntact(boolean intact) {
+        isIntact = intact;
     }
 }
