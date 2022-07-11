@@ -1,4 +1,4 @@
-package Gear;
+package Toyota.Gear;
 
 public enum TransmissionType {
 

@@ -1,7 +1,7 @@
-package Auto;
+package Toyota.Auto;
 
-import Gear.*;
-import Exception.StartCarException;
+import Toyota.Gear.*;
+import Toyota.Exception.StartCarException;
 
 public abstract class Car {
 
@@ -14,11 +14,11 @@ public abstract class Car {
     private Wheel[] wheels;
     private GasTank gasTank;
     private Engine engine;
-    private Electrician electrician;
-    private Lights lights;
+    private Electrics electrics;
+    private HeadLights headLights;
 
     public Car(double price, String color, int maxSpeed, TransmissionType transmissionType, boolean isMoving,
-               Wheel[] wheels, GasTank gasTank, Engine engine, Electrician electrician, Lights lights) {
+               Wheel[] wheels, GasTank gasTank, Engine engine, Electrics electrics, HeadLights headLights) {
         this.price = price;
         this.color = color;
         this.maxSpeed = maxSpeed;
@@ -27,8 +27,8 @@ public abstract class Car {
         this.wheels = wheels;
         this.gasTank = gasTank;
         this.engine = engine;
-        this.electrician = electrician;
-        this.lights = lights;
+        this.electrics = electrics;
+        this.headLights = headLights;
     }
 
     public String getColor() {
@@ -87,20 +87,20 @@ public abstract class Car {
         this.engine = engine;
     }
 
-    public Electrician getElectrician() {
-        return electrician;
+    public Electrics getElectrician() {
+        return electrics;
     }
 
-    public void setElectrician(Electrician electrician) {
-        this.electrician = electrician;
+    public void setElectrician(Electrics electrics) {
+        this.electrics = electrics;
     }
 
-    public Lights getLights() {
-        return lights;
+    public HeadLights getLights() {
+        return headLights;
     }
 
-    public void setLights(Lights lights) {
-        this.lights = lights;
+    public void setLights(HeadLights headLights) {
+        this.headLights = headLights;
     }
 
     public double getPrice() {
@@ -113,19 +113,19 @@ public abstract class Car {
 
     public void startMoving() throws StartCarException {
         for (Wheel wheel : this.wheels) {
-            if (wheel.isIntact()) {
+            if (wheel.isBroken()) {
                 throw new StartCarException("Есть проколотое колесо");
             }
         }
         if (this.wheels.length != 4) {
             throw new StartCarException("Не хватает колёс");
-        } else if (this.gasTank.getAmountOfGas() <= 0) {
+        } else if (this.gasTank.getCurrentVolume() <= 0) {
             throw new StartCarException("Бензобак пуст");
-        } else if (!this.engine.isWorkable()) {
+        } else if (!this.engine.isBroken()) {
             throw new StartCarException("Двигатель не работает");
-        } else if (!this.electrician.isWorkable()) {
+        } else if (!this.electrics.isBroken()) {
             throw new StartCarException("Электрика не работает");
-        } else if (!this.lights.isWorkable()) {
+        } else if (!this.headLights.isBroken()) {
             throw new StartCarException("Фары не работают");
         } else {
             this.isMoving = true;
@@ -141,8 +141,6 @@ public abstract class Car {
     public void lightsOn() {
         System.out.println("Фарю включены");
     }
-
-
 
 
 }

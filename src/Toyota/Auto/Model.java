@@ -1,4 +1,4 @@
-package Auto;
+package Toyota.Auto;
 
 public enum Model {
 

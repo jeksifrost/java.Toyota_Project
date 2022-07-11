@@ -1,14 +1,14 @@
-package Auto;
+package Toyota.Auto;
 
-import Gear.*;
+import Toyota.Gear.*;
 
 public class Camry extends Car {
 
     private final Model model = Model.PASSENGER;
     private boolean isCruiseControlOn;
-    Usb usb;
+    public Usb usb;
 
-    public class Usb {
+    public static class Usb {
 
         public void connectMusic() {
             System.out.println("Музыка подключена");
@@ -16,9 +16,9 @@ public class Camry extends Car {
     }
 
     public Camry(double price, String color, int maxSpeed, TransmissionType transmissionType, boolean isMoving,
-                 Wheel[] wheels, GasTank gasTank, Engine engine, Electrician electrician,
-                 Lights lights, boolean isCruiseControlOn) {
-        super(price, color, maxSpeed, transmissionType, isMoving, wheels, gasTank, engine, electrician, lights);
+                 Wheel[] wheels, GasTank gasTank, Engine engine, Electrics electrics,
+                 HeadLights headLights, boolean isCruiseControlOn) {
+        super(price, color, maxSpeed, transmissionType, isMoving, wheels, gasTank, engine, electrics, headLights);
         this.isCruiseControlOn = isCruiseControlOn;
         usb = new Usb();
     }
@@ -31,7 +31,7 @@ public class Camry extends Car {
         return isCruiseControlOn;
     }
 
-    public void setCruiseControlOn(boolean cruiseControlOn) {
-        isCruiseControlOn = cruiseControlOn;
+    public void changeCruiseControl() {
+        this.isCruiseControlOn = !isCruiseControlOn;
     }
 }
