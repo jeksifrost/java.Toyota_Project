@@ -15,7 +15,7 @@ public class Camry extends Car {
         }
     }
 
-    public Camry(double price, String color, int maxSpeed, TransmissionType transmissionType, boolean isMoving,
+    public Camry(double price, Color color, int maxSpeed, TransmissionType transmissionType, boolean isMoving,
                  Wheel[] wheels, GasTank gasTank, Engine engine, Electrics electrics,
                  HeadLights headLights, boolean isCruiseControlOn) {
         super(price, color, maxSpeed, transmissionType, isMoving, wheels, gasTank, engine, electrics, headLights);

@@ -14,7 +14,7 @@ public class Dyna extends Car {
         }
     }
 
-    public Dyna(double price, String color, int maxSpeed, TransmissionType transmissionType,
+    public Dyna(double price, Color color, int maxSpeed, TransmissionType transmissionType,
                 boolean isMoving, Wheel[] wheels, GasTank gasTank, Engine engine,
                 Electrics electrics, HeadLights headLights, int loadCapacity) {
         super(price, color, maxSpeed, transmissionType, isMoving, wheels, gasTank, engine, electrics, headLights);

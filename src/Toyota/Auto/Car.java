@@ -6,7 +6,7 @@ import Toyota.Exception.StartCarException;
 public abstract class Car {
 
     private double price;
-    private String color;
+    private Color color;
     private int maxSpeed;
     private TransmissionType transmissionType;
     private boolean isMoving;
@@ -17,7 +17,7 @@ public abstract class Car {
     private Electrics electrics;
     private HeadLights headLights;
 
-    public Car(double price, String color, int maxSpeed, TransmissionType transmissionType, boolean isMoving,
+    public Car(double price, Color color, int maxSpeed, TransmissionType transmissionType, boolean isMoving,
                Wheel[] wheels, GasTank gasTank, Engine engine, Electrics electrics, HeadLights headLights) {
         this.price = price;
         this.color = color;
@@ -31,11 +31,11 @@ public abstract class Car {
         this.headLights = headLights;
     }
 
-    public String getColor() {
+    public Color getColor() {
         return color;
     }
 
-    public void setColor(String color) {
+    public void setColor(Color color) {
         this.color = color;
     }
 

@@ -15,7 +15,7 @@ public class Solara extends Car {
         }
     }
 
-    public Solara(double price, String color, int maxSpeed, TransmissionType transmissionType,
+    public Solara(double price, Color color, int maxSpeed, TransmissionType transmissionType,
                   boolean isMoving, Wheel[] wheels, GasTank gasTank, Engine engine, Electrics electrics,
                   HeadLights headLights, boolean isRoofUp) {
         super(price, color, maxSpeed, transmissionType, isMoving, wheels, gasTank, engine, electrics, headLights);

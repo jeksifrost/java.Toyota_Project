@@ -8,7 +8,7 @@ public class Hiance extends Car {
     private int loadCapacity;
     private Wheel spareWheel;
 
-    public Hiance(double price, String color, int maxSpeed, TransmissionType transmissionType,
+    public Hiance(double price, Color color, int maxSpeed, TransmissionType transmissionType,
                   boolean isMoving, Wheel[] wheels, GasTank gasTank, Engine engine,
                   Electrics electrics, HeadLights headLights, int loadCapacity, Wheel spareWheel) {
         super(price, color, maxSpeed, transmissionType, isMoving, wheels, gasTank, engine, electrics, headLights);
