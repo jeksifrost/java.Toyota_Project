@@ -15,35 +15,43 @@ public class Warehouse {
 
     public void addCamry(Camry camry) {
         Camry[] newCamries = new Camry[camries.length + 1];
-        System.arraycopy(camries, 0, newCamries, 0, newCamries.length);
-        this.camries = newCamries;
+        for (int i = 0; i < camries.length; i++) {
+            newCamries[i] = camries[i];
+        }
+        camries = newCamries;
         this.camries[camries.length - 1] = camry;
         this.carCount++;
         this.freeSpaceAmount--;
     }
 
     public void addDyna(Dyna dyna) {
-        Dyna[] newDynas = new Dyna[camries.length + 1];
-        System.arraycopy(dynas, 0, newDynas, 0, newDynas.length);
-        this.dynas = newDynas;
+        Dyna[] newDynas = new Dyna[dynas.length + 1];
+        for (int i = 0; i < dynas.length; i++) {
+            newDynas[i] = dynas[i];
+        }
+        dynas = newDynas;
         this.dynas[dynas.length - 1] = dyna;
         this.carCount++;
         this.freeSpaceAmount--;
     }
 
     public void addHiance(Hiance hiance) {
-        Hiance[] newHiances = new Hiance[camries.length + 1];
-        System.arraycopy(hiances, 0, newHiances, 0, newHiances.length);
-        this.hiances = newHiances;
+        Hiance[] newHiances = new Hiance[hiances.length + 1];
+        for (int i = 0; i < hiances.length; i++) {
+            newHiances[i] = hiances[i];
+        }
+        hiances = newHiances;
         this.hiances[hiances.length - 1] = hiance;
         this.carCount++;
         this.freeSpaceAmount--;
     }
 
     public void addSolara(Solara solara) {
-        Solara[] newSolaras = new Solara[camries.length + 1];
-        System.arraycopy(solaras, 0, newSolaras, 0, newSolaras.length);
-        this.solaras = newSolaras;
+        Solara[] newSolaras = new Solara[solaras.length + 1];
+        for (int i = 0; i < solaras.length; i++) {
+            newSolaras[i] = solaras[i];
+        }
+        solaras = newSolaras;
         this.solaras[solaras.length - 1] = solara;
         this.carCount++;
         this.freeSpaceAmount--;
@@ -55,7 +63,7 @@ public class Warehouse {
             camry = camries[camries.length - 1];
             camries = Arrays.copyOf(camries, camries.length - 1);
         } catch (IndexOutOfBoundsException e) {
-            System.out.println(e.getMessage());
+            System.out.println("Машин нет на складе");
         }
         return camry;
     }
@@ -66,7 +74,7 @@ public class Warehouse {
             dyna = dynas[dynas.length - 1];
             dynas = Arrays.copyOf(dynas, dynas.length - 1);
         } catch (IndexOutOfBoundsException | NullPointerException e) {
-            System.out.println(e.getMessage());
+            System.out.println("Машин нет на складе");
         }
         return dyna;
     }
@@ -77,7 +85,7 @@ public class Warehouse {
             hiance = hiances[hiances.length - 1];
             hiances = Arrays.copyOf(hiances, hiances.length - 1);
         } catch (IndexOutOfBoundsException | NullPointerException e) {
-            System.out.println(e.getMessage());
+            System.out.println("Машин нет на складе");
         }
         return hiance;
     }
@@ -88,7 +96,7 @@ public class Warehouse {
             solara = solaras[solaras.length - 1];
             solaras = Arrays.copyOf(solaras, solaras.length - 1);
         } catch (IndexOutOfBoundsException e) {
-            System.out.println(e.getMessage());
+            System.out.println("Машин нет на складе");
         }
         return solara;
     }

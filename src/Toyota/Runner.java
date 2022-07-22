@@ -53,16 +53,17 @@ public class Runner {
 
         Warehouse warehouse = new Warehouse();
         warehouse.addCamry(camry);
-        warehouse.addDyna(dyna);
-        warehouse.addHiance(hiance);
-        warehouse.addSolara(solara);
+//        warehouse.addDyna(dyna);
+//        warehouse.addHiance(hiance);
+//        warehouse.addSolara(solara);
 
         System.out.println("Осталось " + warehouse.getCamriesCount() + " camry на складе");
         System.out.println("Осталось " + warehouse.getDynasCount() + " dyna на складе");
         System.out.println("Осталось " + warehouse.getHiancesCount() + " hiance на складе");
         System.out.println("Осталось " + warehouse.getSolarasCount() + " solara на складе");
 
-//        Camry newCamry = warehouse.getCamry();
+        Camry newCamry = warehouse.getCamry();
+        Solara newSolara = warehouse.getSolara();
 
         System.out.println("Осталось " + warehouse.getCamriesCount() + " camry на складе");
         System.out.println("Осталось " + warehouse.getDynasCount() + " dyna на складе");
