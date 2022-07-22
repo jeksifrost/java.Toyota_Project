@@ -23,26 +23,26 @@ public class CarFactory {
     public Camry createCamry(Color color, int price) {
         return new Camry(price, color, 200, TransmissionType.AUTOMATIC, false,
                 gearFactory.createWheels(WheelRadius.R17), gearFactory.createGasTank(), gearFactory.createEngine(),
-                gearFactory.createElectrics(), gearFactory.createHeadLights(), false);
+                gearFactory.createElectrics(), gearFactory.createHeadLights(), false, country);
     }
 
     public Dyna createDyna(Color color, int price) {
         return new Dyna(price, color, 200, TransmissionType.AUTOMATIC, false,
                 gearFactory.createWheels(WheelRadius.R17), gearFactory.createGasTank(), gearFactory.createEngine(),
-                gearFactory.createElectrics(), gearFactory.createHeadLights(), 200);
+                gearFactory.createElectrics(), gearFactory.createHeadLights(), 200, country);
     }
 
     public Hiance createHiance(Color color, int price) {
         return new Hiance(price, color, 200, TransmissionType.AUTOMATIC, false,
                 gearFactory.createWheels(WheelRadius.R20), gearFactory.createGasTank(), gearFactory.createEngine(),
                 gearFactory.createElectrics(), gearFactory.createHeadLights(), 100,
-                new Wheel(false, WheelRadius.R20));
+                new Wheel(false, WheelRadius.R20), country);
     }
 
     public Solara createSolara(Color color, int price) {
         return new Solara(price, color, 200, TransmissionType.AUTOMATIC, false,
                 gearFactory.createWheels(WheelRadius.R20), gearFactory.createGasTank(), gearFactory.createEngine(),
-                gearFactory.createElectrics(), gearFactory.createHeadLights(), false);
+                gearFactory.createElectrics(), gearFactory.createHeadLights(), false, country);
     }
 
 }

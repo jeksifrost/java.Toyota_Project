@@ -6,12 +6,13 @@ import Toyota.Factories.Country;
 import Toyota.Factories.GearFactory;
 import Toyota.Gear.*;
 import Toyota.Exception.*;
+import Toyota.Warehouse.Warehouse;
 
 public class Runner {
 
     //не учтены диаметры колёс для каждой модели авто
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws StartCarException {
 
         GearFactory gearFactoryChina = new GearFactory(Country.CHINA);
         GearFactory gearFactoryRussia = new GearFactory(Country.RUSSIA);
@@ -46,6 +47,28 @@ public class Runner {
         }
 
         camry.usb.connectMusic();
+
+        solara.getGasTank().setCurrentVolume(50);
+        solara.startMoving();
+
+        Warehouse warehouse = new Warehouse();
+        warehouse.addCamry(camry);
+        warehouse.addDyna(dyna);
+        warehouse.addHiance(hiance);
+        warehouse.addSolara(solara);
+
+        System.out.println("Осталось " + warehouse.getCamriesCount() + " camry на складе");
+        System.out.println("Осталось " + warehouse.getDynasCount() + " dyna на складе");
+        System.out.println("Осталось " + warehouse.getHiancesCount() + " hiance на складе");
+        System.out.println("Осталось " + warehouse.getSolarasCount() + " solara на складе");
+
+//        Camry newCamry = warehouse.getCamry();
+
+        System.out.println("Осталось " + warehouse.getCamriesCount() + " camry на складе");
+        System.out.println("Осталось " + warehouse.getDynasCount() + " dyna на складе");
+        System.out.println("Осталось " + warehouse.getHiancesCount() + " hiance на складе");
+        System.out.println("Осталось " + warehouse.getSolarasCount() + " solara на складе");
     }
+
 
 }

@@ -1,5 +1,6 @@
 package Toyota.Auto;
 
+import Toyota.Factories.Country;
 import Toyota.Gear.*;
 
 public class Dyna extends Car {
@@ -16,8 +17,8 @@ public class Dyna extends Car {
 
     public Dyna(double price, Color color, int maxSpeed, TransmissionType transmissionType,
                 boolean isMoving, Wheel[] wheels, GasTank gasTank, Engine engine,
-                Electrics electrics, HeadLights headLights, int loadCapacity) {
-        super(price, color, maxSpeed, transmissionType, isMoving, wheels, gasTank, engine, electrics, headLights);
+                Electrics electrics, HeadLights headLights, int loadCapacity, Country country) {
+        super(price, color, maxSpeed, transmissionType, isMoving, wheels, gasTank, engine, electrics, headLights, country);
         this.loadCapacity = loadCapacity;
         this.socket = new Socket();
     }

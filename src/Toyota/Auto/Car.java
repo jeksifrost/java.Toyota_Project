@@ -1,5 +1,6 @@
 package Toyota.Auto;
 
+import Toyota.Factories.Country;
 import Toyota.Gear.*;
 import Toyota.Exception.StartCarException;
 
@@ -10,6 +11,7 @@ public abstract class Car {
     private int maxSpeed;
     private TransmissionType transmissionType;
     private boolean isMoving;
+    private Country country;
 
     private Wheel[] wheels;
     private GasTank gasTank;
@@ -18,7 +20,7 @@ public abstract class Car {
     private HeadLights headLights;
 
     public Car(double price, Color color, int maxSpeed, TransmissionType transmissionType, boolean isMoving,
-               Wheel[] wheels, GasTank gasTank, Engine engine, Electrics electrics, HeadLights headLights) {
+               Wheel[] wheels, GasTank gasTank, Engine engine, Electrics electrics, HeadLights headLights, Country country) {
         this.price = price;
         this.color = color;
         this.maxSpeed = maxSpeed;
@@ -29,6 +31,7 @@ public abstract class Car {
         this.engine = engine;
         this.electrics = electrics;
         this.headLights = headLights;
+        this.country = country;
     }
 
     public Color getColor() {
@@ -121,11 +124,11 @@ public abstract class Car {
             throw new StartCarException("Не хватает колёс");
         } else if (this.gasTank.getCurrentVolume() <= 0) {
             throw new StartCarException("Бензобак пуст");
-        } else if (!this.engine.isBroken()) {
+        } else if (this.engine.isBroken()) {
             throw new StartCarException("Двигатель не работает");
-        } else if (!this.electrics.isBroken()) {
+        } else if (this.electrics.isBroken()) {
             throw new StartCarException("Электрика не работает");
-        } else if (!this.headLights.isBroken()) {
+        } else if (this.headLights.isBroken()) {
             throw new StartCarException("Фары не работают");
         } else {
             this.isMoving = true;

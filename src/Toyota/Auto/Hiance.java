@@ -1,5 +1,6 @@
 package Toyota.Auto;
 
+import Toyota.Factories.Country;
 import Toyota.Gear.*;
 
 public class Hiance extends Car {
@@ -10,8 +11,8 @@ public class Hiance extends Car {
 
     public Hiance(double price, Color color, int maxSpeed, TransmissionType transmissionType,
                   boolean isMoving, Wheel[] wheels, GasTank gasTank, Engine engine,
-                  Electrics electrics, HeadLights headLights, int loadCapacity, Wheel spareWheel) {
-        super(price, color, maxSpeed, transmissionType, isMoving, wheels, gasTank, engine, electrics, headLights);
+                  Electrics electrics, HeadLights headLights, int loadCapacity, Wheel spareWheel, Country country) {
+        super(price, color, maxSpeed, transmissionType, isMoving, wheels, gasTank, engine, electrics, headLights, country);
         this.loadCapacity = loadCapacity;
         this.spareWheel = spareWheel;
     }

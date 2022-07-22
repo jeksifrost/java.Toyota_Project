@@ -1,5 +1,6 @@
 package Toyota.Auto;
 
+import Toyota.Factories.Country;
 import Toyota.Gear.*;
 
 public class Solara extends Car {
@@ -17,8 +18,8 @@ public class Solara extends Car {
 
     public Solara(double price, Color color, int maxSpeed, TransmissionType transmissionType,
                   boolean isMoving, Wheel[] wheels, GasTank gasTank, Engine engine, Electrics electrics,
-                  HeadLights headLights, boolean isRoofUp) {
-        super(price, color, maxSpeed, transmissionType, isMoving, wheels, gasTank, engine, electrics, headLights);
+                  HeadLights headLights, boolean isRoofUp, Country country) {
+        super(price, color, maxSpeed, transmissionType, isMoving, wheels, gasTank, engine, electrics, headLights, country);
         this.isRoofUp = isRoofUp;
         this.miniFridge = new MiniFridge();
     }
